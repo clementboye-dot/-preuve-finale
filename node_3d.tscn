@@ -1,0 +1,171 @@
+[gd_scene format=3 uid="uid://bs8n77n5c2nip"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4xowi"]
+albedo_color = Color(0.9137255, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_a202f"]
+material = SubResource("StandardMaterial3D_4xowi")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_noarx"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_a0tk4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3fl7"]
+albedo_color = Color(0.7647059, 0.79607844, 0.85490197, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jka67"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_i5arm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wc5p8"]
+albedo_color = Color(0.87058824, 0.4745098, 0.003921569, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_jsk3o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4arys"]
+albedo_color = Color(0, 0.76862746, 0.827451, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_6iypd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tereu"]
+albedo_color = Color(0.48235294, 0.50980395, 0.50980395, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_cdqbm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_imku0"]
+albedo_color = Color(1, 0.1254902, 0.1254902, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_wlxy5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3v7ru"]
+albedo_color = Color(0.7176471, 0.5176471, 0.3647059, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_tcnuu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tuemg"]
+albedo_color = Color(0.69803923, 0.6431373, 0.32941177, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_i0g27"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ealrb"]
+albedo_color = Color(0.68235296, 1, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_jsnrv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lggff"]
+albedo_color = Color(0.22352941, 0.2, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_s0gvp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vxd74"]
+albedo_color = Color(0.5254902, 0.27058825, 0.2901961, 1)
+
+[node name="Node3D" type="Node3D" unique_id=281415560]
+
+[node name="Soleil" type="RigidBody3D" parent="." unique_id=567507087]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Soleil" unique_id=107267901]
+mesh = SubResource("SphereMesh_a202f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Soleil" unique_id=1589332915]
+shape = SubResource("SphereShape3D_noarx")
+
+[node name="Mercure" type="RigidBody3D" parent="." unique_id=1240658079]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Mercure" unique_id=1757940648]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1, 0, 0)
+mesh = SubResource("SphereMesh_a0tk4")
+surface_material_override/0 = SubResource("StandardMaterial3D_r3fl7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mercure" unique_id=1517539560]
+shape = SubResource("SphereShape3D_jka67")
+
+[node name="Vénus" type="RigidBody3D" parent="." unique_id=1381306624]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Vénus" unique_id=106637771]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.5, 0, 0)
+mesh = SubResource("SphereMesh_i5arm")
+surface_material_override/0 = SubResource("StandardMaterial3D_wc5p8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Vénus" unique_id=309883714]
+shape = SubResource("SphereShape3D_jka67")
+
+[node name="Terre" type="RigidBody3D" parent="." unique_id=379577997]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Terre" unique_id=638261619]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 2, 0, 0)
+mesh = SubResource("SphereMesh_jsk3o")
+surface_material_override/0 = SubResource("StandardMaterial3D_4arys")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terre" unique_id=1490191422]
+shape = SubResource("SphereShape3D_jka67")
+
+[node name="Lune" type="RigidBody3D" parent="." unique_id=1873931701]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lune" unique_id=566041102]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 2.3, 0, 0)
+mesh = SubResource("SphereMesh_6iypd")
+surface_material_override/0 = SubResource("StandardMaterial3D_tereu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lune" unique_id=51026163]
+shape = SubResource("SphereShape3D_jka67")
+
+[node name="Mars" type="RigidBody3D" parent="." unique_id=321515390]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Mars" unique_id=919824025]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.6, 0, 0)
+mesh = SubResource("SphereMesh_cdqbm")
+surface_material_override/0 = SubResource("StandardMaterial3D_imku0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mars" unique_id=1530003039]
+shape = SubResource("SphereShape3D_jka67")
+
+[node name="Jupiter" type="RigidBody3D" parent="." unique_id=917678179]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Jupiter" unique_id=1865270263]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 3.4, 0, 0)
+mesh = SubResource("SphereMesh_wlxy5")
+surface_material_override/0 = SubResource("StandardMaterial3D_3v7ru")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Jupiter" unique_id=1259912063]
+shape = SubResource("SphereShape3D_jka67")
+
+[node name="Saturne" type="RigidBody3D" parent="." unique_id=1678869422]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Saturne" unique_id=1560984232]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 4.3, 0, 0)
+mesh = SubResource("SphereMesh_tcnuu")
+surface_material_override/0 = SubResource("StandardMaterial3D_tuemg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Saturne" unique_id=1720605821]
+shape = SubResource("SphereShape3D_jka67")
+
+[node name="Uranus" type="RigidBody3D" parent="." unique_id=766631168]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Uranus" unique_id=1662092341]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 5, 0, 0)
+mesh = SubResource("SphereMesh_i0g27")
+surface_material_override/0 = SubResource("StandardMaterial3D_ealrb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Uranus" unique_id=1052045415]
+shape = SubResource("SphereShape3D_jka67")
+
+[node name="Neptune" type="RigidBody3D" parent="." unique_id=1638551526]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Neptune" unique_id=169516783]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 5.5, 0, 0)
+mesh = SubResource("SphereMesh_jsnrv")
+surface_material_override/0 = SubResource("StandardMaterial3D_lggff")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Neptune" unique_id=312744698]
+shape = SubResource("SphereShape3D_jka67")
+
+[node name="Pluton" type="RigidBody3D" parent="." unique_id=891562256]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Pluton" unique_id=427538883]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 6, 0, 0)
+mesh = SubResource("SphereMesh_s0gvp")
+surface_material_override/0 = SubResource("StandardMaterial3D_vxd74")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pluton" unique_id=1679582073]
+shape = SubResource("SphereShape3D_jka67")
