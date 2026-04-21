@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cn1gt0yg8am34" path="res://soleil.tscn" id="1_kn8mq"]
 [ext_resource type="PackedScene" uid="uid://6kubr73fv4wv" path="res://mars.tscn" id="2_tmq3n"]
+[ext_resource type="Script" uid="uid://c1y7wmdi8wv6o" path="res://node_3d.gd" id="3_tmq3n"]
 
 [sub_resource type="Environment" id="Environment_4xowi"]
 background_mode = 1
@@ -11,18 +12,23 @@ background_mode = 1
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=440042175]
 environment = SubResource("Environment_4xowi")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1582182534]
-transform = Transform3D(1, 0, 0, 0, 0.7071067811865476, 0.7071067811865476, 0, -0.7071067811865476, 0.7071067811865476, 0, 3, 5)
-
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=606073836]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.473743770995228, 3.657876725789455)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.473744, 3.6578767)
 omni_range = 10.682
 omni_attenuation = 0.0
 
 [node name="Soleil" parent="." unique_id=587096134 instance=ExtResource("1_kn8mq")]
 
 [node name="Mars" parent="." unique_id=1646166341 instance=ExtResource("2_tmq3n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.849977304468364, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8499775, 0, 0)
 rayon_initial = 5.0
 vitesse_initiale = 10.0
 etapes_calcul_par_ecran = 100
+
+[node name="Node3D" type="Node3D" parent="." unique_id=147103916]
+script = ExtResource("3_tmq3n")
+
+[node name="Node3D" type="Node3D" parent="Node3D" unique_id=244759195]
+
+[node name="Camera3D" type="Camera3D" parent="Node3D/Node3D" unique_id=1582182534]
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 3, 5)
