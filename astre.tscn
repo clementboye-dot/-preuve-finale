@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cbgdus70euocn"]
+
+[ext_resource type="Script" uid="uid://d0id64b0qlpvt" path="res://astre.gd" id="1_pjjbc"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ck0m2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pjjbc"]
+
+[node name="Astre" type="Node3D" unique_id=587096134]
+script = ExtResource("1_pjjbc")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=297619227]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=1160622455]
+mesh = SubResource("SphereMesh_ck0m2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1265038967]
+shape = SubResource("SphereShape3D_pjjbc")
