@@ -21,8 +21,9 @@ omni_attenuation = 0.0
 
 [node name="Soleil" parent="." unique_id=587096134 instance=ExtResource("1_kn8mq")]
 
-[node name="Mars" parent="." unique_id=1646166341 instance=ExtResource("2_tmq3n")]
+[node name="Mars" parent="." unique_id=1646166341 node_paths=PackedStringArray("centre_rotation") instance=ExtResource("2_tmq3n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.849977304468364, 0, 0)
+centre_rotation = NodePath("../Soleil")
 rayon_initial = 5.0
 vitesse_initiale = 10.0
 etapes_calcul_par_ecran = 100
