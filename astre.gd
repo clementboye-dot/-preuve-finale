@@ -1,4 +1,4 @@
-extends RigidBody3D
+extends Node3D
 
 @export var centre_rotation : RigidBody3D
 
