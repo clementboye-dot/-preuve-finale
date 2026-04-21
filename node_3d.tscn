@@ -169,3 +169,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_vxd74")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pluton" unique_id=1679582073]
 shape = SubResource("SphereShape3D_jka67")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=299495202]
+
+[node name="Node3D" type="Node3D" parent="Node3D" unique_id=541476304]
+
+[node name="Camera3D" type="Camera3D" parent="Node3D/Node3D" unique_id=21315147]
+transform = Transform3D(0.688067014998591, 0, 0.7256471476350809, 0, 1, 0, -0.7256471476350809, 0, 0.688067014998591, 7.387294259256244, -0.0818342742198972, 6.291513938207035)
