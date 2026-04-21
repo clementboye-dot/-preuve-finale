@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://6kubr73fv4wv"]
+
+[ext_resource type="PackedScene" uid="uid://cbgdus70euocn" path="res://astre.tscn" id="1_xn7oe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xn7oe"]
+albedo_color = Color(0.63529414, 0.14509805, 0, 1)
+
+[node name="Mars" unique_id=587096134 instance=ExtResource("1_xn7oe")]
+
+[node name="MeshInstance3D" parent="RigidBody3D" parent_id_path=PackedInt32Array(297619227) index="0" unique_id=1160622455]
+surface_material_override/0 = SubResource("StandardMaterial3D_xn7oe")

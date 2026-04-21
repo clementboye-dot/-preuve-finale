@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bs8n77n5c2nip"]
+
+[sub_resource type="Environment" id="Environment_4xowi"]
+background_mode = 1
+
+[node name="Node3D" type="Node3D" unique_id=281415560]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=440042175]
+environment = SubResource("Environment_4xowi")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1582182534]
+transform = Transform3D(1, 0, 0, 0, 0.7071067811865476, 0.7071067811865476, 0, -0.7071067811865476, 0.7071067811865476, 0, 3, 5)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=606073836]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.473743770995228, 3.657876725789455)
+omni_range = 10.682
+omni_attenuation = 0.0
