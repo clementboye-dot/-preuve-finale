@@ -1,22 +1,26 @@
 extends Node3D
-
-
-
+class_name Astre
+@export var liste_planetes : ListeAstre
 @export_group("Paramètre de conversion simulation")
-@export var centre_rotation : Node3D
-@export var periode_relative : float
+#@export var centre_rotation : Node3D
+#@export var periode_relative : float
 @export var min_distance_simulee : float
 @export var max_distance_simulee : float
 @export var min_distance_reelle : float
 @export var max_distance_reelle : float
+@export var echelle_temps : float
 
 @export_group("Simulation gravitationnelle")
 @export var masse : float
-@export var masse_centre_rotation : float
-@export var rayon_initial : float
-@export var vitesse_initiale : float
+#@export var masse_centre_rotation : float
+@export var position_initiale : Vector3
+@export var vitesse_initiale : Vector3
+@export var vitesse_perihelie : float
+@export var excentricite : float
+@export var periode : float
+@export var plan_inclinaison : float
 
-@export_group("Paramètres de la méthode Ruge Kutta")
+@export_group("Paramètres RK4")
 @export var etapes_calcul_par_ecran : int
 
 ### CONSTANTES ###
@@ -25,19 +29,20 @@ var G : float = 6.673e-11
 
 var r_i : Vector3
 var v_i : Vector3
-var periode : float
+#var periode : float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 #---POSITION INITIALE---#
-	r_i = rayon_initial * Vector3(1, 0, 0)
+	r_i = position_initiale
 	
 	position = conv_position_reelle_a_simulee(r_i)
 	
 #---VITESSE INITIALE---#
-	v_i = vitesse_initiale * Vector3(0, 0, 1)
+	v_i = vitesse_initiale
 	
-	periode = 2 * PI * rayon_initial / vitesse_initiale
+#---PÉRIODE---#
+	#periode = 2 * PI * rayon_initial / vitesse_initiale
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -45,8 +50,8 @@ func _process(delta: float) -> void:
 	
 	position = conv_position_reelle_a_simulee(r_i)
 	
-	if centre_rotation != null:
-		position += centre_rotation.position
+	#if centre_rotation != null:
+		#position += centre_rotation.position
 
 func conv_position_reelle_a_simulee(position_reelle : Vector3) -> Vector3:
 	var distance_reelle = position_reelle.length() #Norme vecteur de distance
@@ -56,10 +61,17 @@ func conv_position_reelle_a_simulee(position_reelle : Vector3) -> Vector3:
 	return position_simulee
 
 func calculer_acceleration_gravitationnelle(position_reelle : Vector3) -> Vector3:
-	return - G * masse_centre_rotation * position_reelle / (position_reelle.length()**3)
+	var acceleration = Vector3.ZERO
+	for planete in liste_planetes.planetes :
+		if planete != self:
+			var vecteur_distance_autre_planète : Vector3 = planete.r_i - position_reelle
+			var distance : float = vecteur_distance_autre_planète.length()
+			if distance > 1.0:  # Évite division par zéro
+				acceleration += G * planete.masse / (distance**2) * vecteur_distance_autre_planète.normalized()
+	return acceleration
 
 func appliquer_RK4(temps_dernier_ecran : float) -> void:
-	var nb_periode = temps_dernier_ecran * periode / periode_relative
+	var nb_periode = temps_dernier_ecran * echelle_temps
 	var h = nb_periode / etapes_calcul_par_ecran
 
 	var t_i = 0.0
