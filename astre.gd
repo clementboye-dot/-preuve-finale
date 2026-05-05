@@ -8,7 +8,7 @@ class_name Astre
 @export var max_distance_simulee : float
 @export var min_distance_reelle : float
 @export var max_distance_reelle : float
-@export var echelle_temps : float
+
 
 @export_group("Simulation gravitationnelle")
 @export var masse : float
@@ -17,7 +17,7 @@ class_name Astre
 @export var vitesse_initiale : Vector3
 @export var vitesse_perihelie : float
 @export var excentricite : float
-@export var periode : float
+#@export var periode : float
 @export var plan_inclinaison : float
 
 @export_group("Paramètres RK4")
@@ -26,6 +26,8 @@ class_name Astre
 ### CONSTANTES ###
 var G : float = 6.673e-11
 
+# 1 seconde correspond à 1 mois de simulation
+var echelle_temps : float = 2629800.0
 
 var r_i : Vector3
 var v_i : Vector3
@@ -67,6 +69,7 @@ func calculer_acceleration_gravitationnelle(position_reelle : Vector3) -> Vector
 			var vecteur_distance_autre_planète : Vector3 = planete.r_i - position_reelle
 			var distance : float = vecteur_distance_autre_planète.length()
 			if distance > 1.0:  # Évite division par zéro
+				print(vecteur_distance_autre_planète)
 				acceleration += G * planete.masse / (distance**2) * vecteur_distance_autre_planète.normalized()
 	return acceleration
 
