@@ -2,8 +2,6 @@ extends Node3D
 class_name Astre
 @export var liste_planetes : ListeAstre
 @export_group("Paramètre de conversion simulation")
-#@export var centre_rotation : Node3D
-#@export var periode_relative : float
 @export var min_distance_simulee : float
 @export var max_distance_simulee : float
 @export var min_distance_reelle : float
@@ -12,12 +10,10 @@ class_name Astre
 
 @export_group("Simulation gravitationnelle")
 @export var masse : float
-#@export var masse_centre_rotation : float
 @export var position_initiale : Vector3
 @export var vitesse_initiale : Vector3
 @export var vitesse_perihelie : float
 @export var excentricite : float
-#@export var periode : float
 @export var plan_inclinaison : float
 
 @export_group("Paramètres RK4")
@@ -26,9 +22,10 @@ class_name Astre
 ### CONSTANTES ###
 var G : float = 6.673e-11
 
-# 1 seconde correspond à 1 mois de simulation
-var echelle_temps : float = 2629800.0
 
+var echelle_temps : float = 31557600.0
+#1s = 1 mois : 2629800.0
+#1s = 1 an : 31557600.0
 var r_i : Vector3
 var v_i : Vector3
 #var periode : float
@@ -52,6 +49,7 @@ func _process(delta: float) -> void:
 	
 	position = conv_position_reelle_a_simulee(r_i)
 	
+	
 	#if centre_rotation != null:
 		#position += centre_rotation.position
 
@@ -69,16 +67,14 @@ func calculer_acceleration_gravitationnelle(position_reelle : Vector3) -> Vector
 			var vecteur_distance_autre_planète : Vector3 = planete.r_i - position_reelle
 			var distance : float = vecteur_distance_autre_planète.length()
 			if distance > 1.0:  # Évite division par zéro
-				print(vecteur_distance_autre_planète)
 				acceleration += G * planete.masse / (distance**2) * vecteur_distance_autre_planète.normalized()
 	return acceleration
 
 func appliquer_RK4(temps_dernier_ecran : float) -> void:
-	var nb_periode = temps_dernier_ecran * echelle_temps
-	var h = nb_periode / etapes_calcul_par_ecran
+	var h = temps_dernier_ecran * echelle_temps / etapes_calcul_par_ecran
 
-	var t_i = 0.0
-	while t_i <= nb_periode:
+
+	for _i in range(etapes_calcul_par_ecran):
 		# k1 — pente au début du pas
 		var k1_r = v_i
 		var k1_v = calculer_acceleration_gravitationnelle(r_i)
@@ -98,5 +94,3 @@ func appliquer_RK4(temps_dernier_ecran : float) -> void:
 		# Mise à jour position et vitesse
 		r_i = r_i + (h / 6.0) * (k1_r + 2*k2_r + 2*k3_r + k4_r)
 		v_i = v_i + (h / 6.0) * (k1_v + 2*k2_v + 2*k3_v + k4_v)
-
-		t_i += h
