@@ -1,11 +1,21 @@
 [gd_scene format=3 uid="uid://dvagahhyrjo0e"]
 
 [ext_resource type="PackedScene" uid="uid://cbgdus70euocn" path="res://astre.tscn" id="1_4gtc2"]
+[ext_resource type="Script" uid="uid://dmar2ee14hn21" path="res://infosmercure.gd" id="2_g30sm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4gtc2"]
 albedo_color = Color(0.5411765, 0.5568628, 0.47843137, 1)
 
 [node name="Mercure" unique_id=587096134 instance=ExtResource("1_4gtc2")]
 
-[node name="MeshInstance3D" parent="RigidBody3D" parent_id_path=PackedInt32Array(297619227) index="0" unique_id=1160622455]
+[node name="RigidBody3D" parent="." index="0" unique_id=297619227]
+script = ExtResource("2_g30sm")
+nom = null
+masse = null
+"vitesse_péri" = null
+"excentricité" = null
+periode_revo = null
+periode_rot = null
+
+[node name="MeshInstance3D" parent="RigidBody3D" index="0" unique_id=1160622455]
 surface_material_override/0 = SubResource("StandardMaterial3D_4gtc2")

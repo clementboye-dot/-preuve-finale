@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bk21qam6k4nu" path="res://liste_astre.gd" id="4_tx178"]
 [ext_resource type="PackedScene" uid="uid://dfcdsbjw5y680" path="res://terre.tscn" id="5_m4722"]
 [ext_resource type="PackedScene" uid="uid://b32n8ap1gm87a" path="res://jupiter.tscn" id="8_m4722"]
+[ext_resource type="PackedScene" uid="uid://o0bhvoir5xx2" path="res://interface.tscn" id="9_sgel3"]
 
 [sub_resource type="Environment" id="Environment_4xowi"]
 background_mode = 1
@@ -20,7 +21,7 @@ script = ExtResource("3_tmq3n")
 [node name="Node3D2" type="Node3D" parent="." unique_id=244759195]
 
 [node name="Camera3D" type="Camera3D" parent="Node3D2" unique_id=1582182534]
-transform = Transform3D(1, 0, 0, 0, 0.34690520719117235, 0.9379001957690647, 0, -0.9379001957690647, 0.34690520719117235, 0, 27.15257312235267, 6.485659491578321)
+transform = Transform3D(1, 0, 0, 0, 0.34690520719117235, 0.9379001957690648, 0, -0.9379001957690648, 0.34690520719117235, 0, 27.15257312235267, 6.485659491578321)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=440042175]
 environment = SubResource("Environment_4xowi")
@@ -30,7 +31,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.62682862709088, 6.670189
 omni_range = 33.280624
 omni_attenuation = 0.0
 
-<<<<<<< HEAD
 [node name="Liste Planètes" type="Node3D" parent="." unique_id=1752416457 node_paths=PackedStringArray("planetes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.849977304468364, 0, 0)
 script = ExtResource("4_tx178")
@@ -99,15 +99,6 @@ max_distance_reelle = 249230000000.0
 masse = 6.41693e+23
 position_initiale = Vector3(50492927058.32, -188910865671.5, -87982433201.5)
 vitesse_initiale = Vector3(24459.5, 7385.96, 2728.12)
-=======
-[node name="Soleil" parent="." unique_id=587096134 instance=ExtResource("1_kn8mq")]
-
-[node name="Mars" parent="." unique_id=1646166341 node_paths=PackedStringArray("centre_rotation") instance=ExtResource("2_tmq3n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.849977304468364, 0, 0)
-centre_rotation = NodePath("../Soleil")
-rayon_initial = 5.0
-vitesse_initiale = 10.0
->>>>>>> a9b83f2 (allo)
 etapes_calcul_par_ecran = 100
 
 [node name="Jupiter" parent="." unique_id=707915115 node_paths=PackedStringArray("liste_planetes") instance=ExtResource("8_m4722")]
@@ -120,3 +111,5 @@ masse = 1.89813e+27
 position_initiale = Vector3(-253878002218.836, 674701512947.702, 295381710768.629)
 vitesse_initiale = Vector3(-12507.074, -3455.519, -1176.64)
 etapes_calcul_par_ecran = 100
+
+[node name="Interface" parent="." unique_id=1665400921 instance=ExtResource("9_sgel3")]
