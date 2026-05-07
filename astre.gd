@@ -23,7 +23,8 @@ class_name Astre
 var G : float = 6.673e-11
 
 
-var echelle_temps : float = 31557600.0
+var echelle_temps : float = 31557600.0/2
+
 #1s = 1 mois : 2629800.0
 #1s = 1 an : 31557600.0
 var r_i : Vector3

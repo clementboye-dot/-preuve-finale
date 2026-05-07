@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c8irkubqged1n"]
+
+[ext_resource type="PackedScene" uid="uid://cbgdus70euocn" path="res://astre.tscn" id="1_1deyj"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_0twlw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7la6y"]
+albedo_color = Color(0.77254903, 0.65882355, 0.5019608, 1)
+
+[node name="Pluton" unique_id=587096134 instance=ExtResource("1_1deyj")]
+
+[node name="MeshInstance3D" parent="RigidBody3D" parent_id_path=PackedInt32Array(297619227) index="0" unique_id=1160622455]
+mesh = SubResource("SphereMesh_0twlw")
+surface_material_override/0 = SubResource("StandardMaterial3D_7la6y")

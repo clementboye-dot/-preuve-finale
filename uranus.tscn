@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ceesju5bdxam"]
+
+[ext_resource type="PackedScene" uid="uid://cbgdus70euocn" path="res://astre.tscn" id="1_8q3j1"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_e8pt5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1dyna"]
+albedo_color = Color(0.49019608, 0.9098039, 0.9098039, 1)
+
+[node name="Uranus" unique_id=587096134 instance=ExtResource("1_8q3j1")]
+
+[node name="MeshInstance3D" parent="RigidBody3D" parent_id_path=PackedInt32Array(297619227) index="0" unique_id=1160622455]
+mesh = SubResource("SphereMesh_e8pt5")
+surface_material_override/0 = SubResource("StandardMaterial3D_1dyna")
