@@ -8,8 +8,8 @@ albedo_color = Color(1, 1, 0, 1)
 [node name="Soleil" unique_id=587096134 instance=ExtResource("1_r1vuo")]
 
 [node name="MeshInstance3D" parent="RigidBody3D" parent_id_path=PackedInt32Array(297619227) index="0" unique_id=1160622455]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_r1vuo")
 
 [node name="CollisionShape3D" parent="RigidBody3D" parent_id_path=PackedInt32Array(297619227) index="1" unique_id=1265038967]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)

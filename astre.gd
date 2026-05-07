@@ -26,9 +26,9 @@ var G : float = 6.673e-11
 var echelle_temps : float = 31557600.0
 #1s = 1 mois : 2629800.0
 #1s = 1 an : 31557600.0
-var r_i : Vector3
+
 var v_i : Vector3
-#var periode : float
+var r_i : Vector3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -40,24 +40,16 @@ func _ready() -> void:
 #---VITESSE INITIALE---#
 	v_i = vitesse_initiale
 	
-#---PÉRIODE---#
-	#periode = 2 * PI * rayon_initial / vitesse_initiale
-	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	appliquer_RK4(delta)
-	
 	position = conv_position_reelle_a_simulee(r_i)
-	
-	
-	#if centre_rotation != null:
-		#position += centre_rotation.position
 
 func conv_position_reelle_a_simulee(position_reelle : Vector3) -> Vector3:
 	var distance_reelle = position_reelle.length() #Norme vecteur de distance
 	var ratio = inverse_lerp(min_distance_reelle, max_distance_reelle, distance_reelle)
 	var distance_simulee = lerp(min_distance_simulee, max_distance_simulee, ratio)
-	var position_simulee = distance_simulee * position_reelle / position_reelle.length() #ou position_reelle.normalized()
+	var position_simulee = distance_simulee * position_reelle / position_reelle.length()
 	return position_simulee
 
 func calculer_acceleration_gravitationnelle(position_reelle : Vector3) -> Vector3:
@@ -72,7 +64,6 @@ func calculer_acceleration_gravitationnelle(position_reelle : Vector3) -> Vector
 
 func appliquer_RK4(temps_dernier_ecran : float) -> void:
 	var h = temps_dernier_ecran * echelle_temps / etapes_calcul_par_ecran
-
 
 	for _i in range(etapes_calcul_par_ecran):
 		# k1 — pente au début du pas
