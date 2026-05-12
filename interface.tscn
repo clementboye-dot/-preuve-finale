@@ -18,7 +18,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1997990736]
 layout_mode = 2
-text = "Mercure"
+text = "Planète : "
 
 [node name="Temps" type="PanelContainer" parent="." unique_id=815681695]
 offset_left = 1.0

@@ -24,13 +24,13 @@ script = ExtResource("3_tmq3n")
 [node name="Node3D2" type="Node3D" parent="." unique_id=244759195]
 
 [node name="Camera3D" type="Camera3D" parent="Node3D2" unique_id=1582182534]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.709568988384582)
+transform = Transform3D(1, 0, 0, 0, 6.123233995736766e-17, 1, 0, -1, 6.123233995736766e-17, 0, 30, 5)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=440042175]
 environment = SubResource("Environment_4xowi")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=606073836]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.7591889824388467, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.7591889824388462, 0)
 omni_range = 50.100033
 omni_attenuation = 0.0
 
@@ -106,8 +106,6 @@ position_initiale = Vector3(-253878002218.836, 674701512947.702, 295381710768.62
 vitesse_initiale = Vector3(-12507.074, -3455.519, -1176.64)
 etapes_calcul_par_ecran = 100
 
-[node name="Interface" parent="." unique_id=1665400921 instance=ExtResource("9_sgel3")]
-
 [node name="Saturne" parent="." unique_id=2077513798 node_paths=PackedStringArray("liste_planetes") instance=ExtResource("9_sgel3")]
 liste_planetes = NodePath("../Liste Planètes")
 min_distance_simulee = 15.0
@@ -151,3 +149,5 @@ masse = 1.3139999999999999e+22
 position_initiale = Vector3(2875996542272.52, -3928583689975.5, -2092522253441.97)
 vitesse_initiale = Vector3(4711.972, 2219.55, -727.049)
 etapes_calcul_par_ecran = 50
+
+[node name="Interface" parent="." unique_id=1665400921 instance=ExtResource("9_sgel3")]
