@@ -2,20 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://cn1gt0yg8am34" path="res://soleil.tscn" id="1_kn8mq"]
 [ext_resource type="PackedScene" uid="uid://6kubr73fv4wv" path="res://mars.tscn" id="2_tmq3n"]
-[ext_resource type="Script" uid="uid://c1y7wmdi8wv6o" path="res://node_3d.gd" id="3_tmq3n"]
+[ext_resource type="Script" uid="uid://c1y7wmdi8wv6o" path="res://caméra.gd" id="3_tmq3n"]
 [ext_resource type="PackedScene" uid="uid://dvagahhyrjo0e" path="res://mercure.tscn" id="4_f33st"]
 [ext_resource type="PackedScene" uid="uid://g0clevt4ibgv" path="res://venus.tscn" id="4_i4jmq"]
 [ext_resource type="Script" uid="uid://bk21qam6k4nu" path="res://liste_astre.gd" id="4_tx178"]
 [ext_resource type="PackedScene" uid="uid://dfcdsbjw5y680" path="res://terre.tscn" id="5_m4722"]
 [ext_resource type="PackedScene" uid="uid://b32n8ap1gm87a" path="res://jupiter.tscn" id="8_m4722"]
-
-[ext_resource type="PackedScene" uid="uid://o0bhvoir5xx2" path="res://interface.tscn" id="9_sgel3"]
-
 [ext_resource type="PackedScene" uid="uid://ugcpmnvxava5" path="res://saturne.tscn" id="9_sgel3"]
 [ext_resource type="PackedScene" uid="uid://ceesju5bdxam" path="res://uranus.tscn" id="10_xhxhc"]
 [ext_resource type="PackedScene" uid="uid://bh68mdunjuel8" path="res://neptune.tscn" id="11_8oucy"]
 [ext_resource type="PackedScene" uid="uid://c8irkubqged1n" path="res://pluton.tscn" id="12_efn0d"]
-
 
 [sub_resource type="Environment" id="Environment_4xowi"]
 background_mode = 1
@@ -28,11 +24,7 @@ script = ExtResource("3_tmq3n")
 [node name="Node3D2" type="Node3D" parent="." unique_id=244759195]
 
 [node name="Camera3D" type="Camera3D" parent="Node3D2" unique_id=1582182534]
-<<<<<<< HEAD
 transform = Transform3D(1, 0, 0, 0, 0.34690520719117235, 0.9379001957690648, 0, -0.9379001957690648, 0.34690520719117235, 0, 27.15257312235267, 6.485659491578321)
-=======
-transform = Transform3D(1, 0, 0, 0, -0.12304908079220628, 0.9924005863139104, 0, -0.9924005863139104, -0.12304908079220628, 0, 27.15257312235267, -7.255779430445067)
->>>>>>> refs/remotes/origin/main
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=440042175]
 environment = SubResource("Environment_4xowi")
@@ -70,7 +62,10 @@ vitesse_initiale = Vector3(33311.547, -16770.258, -12410.149)
 vitesse_perihelie = 58980.0
 excentricite = 0.206
 plan_inclinaison = 0.03
-etapes_calcul_par_ecran = 1000
+nom = "Mercure"
+periode_revo = 0.241
+periode_rot = 58.646
+etapes_calcul_par_ecran = 100
 
 [node name="Vénus" parent="." unique_id=31247543 node_paths=PackedStringArray("liste_planetes") instance=ExtResource("4_i4jmq")]
 liste_planetes = NodePath("../Liste Planètes")
@@ -84,6 +79,9 @@ vitesse_initiale = Vector3(34535.181, 4583.191, -122.074)
 vitesse_perihelie = 35260.0
 excentricite = 0.007
 plan_inclinaison = 177.4
+nom = "Vénus"
+periode_revo = 0.615
+periode_rot = 58.646
 etapes_calcul_par_ecran = 1000
 
 [node name="Terre" parent="." unique_id=831615703 node_paths=PackedStringArray("liste_planetes") instance=ExtResource("5_m4722")]
@@ -98,6 +96,9 @@ vitesse_initiale = Vector3(-29776.506, -4950.769, -2146.23)
 vitesse_perihelie = 30290.0
 excentricite = 0.017
 plan_inclinaison = 23.4
+nom = "Terre"
+periode_revo = 1.0
+periode_rot = 0.997
 etapes_calcul_par_ecran = 1000
 
 [node name="Mars" parent="." unique_id=1646166341 node_paths=PackedStringArray("liste_planetes") instance=ExtResource("2_tmq3n")]
@@ -110,11 +111,8 @@ max_distance_reelle = 249230000000.0
 masse = 6.41693e+23
 position_initiale = Vector3(50492927058.32, -188910865671.5, -87982433201.5)
 vitesse_initiale = Vector3(24459.5, 7385.96, 2728.12)
-<<<<<<< HEAD
+nom = "Mars"
 etapes_calcul_par_ecran = 100
-=======
-etapes_calcul_par_ecran = 1000
->>>>>>> refs/remotes/origin/main
 
 [node name="Jupiter" parent="." unique_id=707915115 node_paths=PackedStringArray("liste_planetes") instance=ExtResource("8_m4722")]
 liste_planetes = NodePath("../Liste Planètes")
@@ -125,12 +123,9 @@ max_distance_reelle = 816000000000.0
 masse = 1.89813e+27
 position_initiale = Vector3(-253878002218.836, 674701512947.702, 295381710768.629)
 vitesse_initiale = Vector3(-12507.074, -3455.519, -1176.64)
-<<<<<<< HEAD
 etapes_calcul_par_ecran = 100
 
 [node name="Interface" parent="." unique_id=1665400921 instance=ExtResource("9_sgel3")]
-=======
-etapes_calcul_par_ecran = 50
 
 [node name="Saturne" parent="." unique_id=2077513798 node_paths=PackedStringArray("liste_planetes") instance=ExtResource("9_sgel3")]
 liste_planetes = NodePath("../Liste Planètes")
@@ -186,4 +181,3 @@ vitesse_initiale = Vector3(4711.972, 2219.55, -727.049)
 excentricite = 0.25
 plan_inclinaison = 17.089
 etapes_calcul_par_ecran = 50
->>>>>>> refs/remotes/origin/main

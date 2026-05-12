@@ -16,6 +16,22 @@ class_name Astre
 @export var excentricite : float
 @export var plan_inclinaison : float
 
+@export_group("Informations")
+@export var nom : String 
+@export var periode_revo : float
+@export var periode_rot : float
+@export var interface : Node2D
+
+func _input_event(_camera, event, _position, _normal, _shape_idx):
+		if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+			appeler_interface
+
+func appeler_interface():
+	if interface :
+		interface.remplir_le_tableau(self)
+	else:
+		print("Erreur : L'interface n'est pas reliée dans l'inspecteur de ", nom)
+
 @export_group("Paramètres RK4")
 @export var etapes_calcul_par_ecran : int
 

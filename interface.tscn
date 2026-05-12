@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://o0bhvoir5xx2"]
 
+[ext_resource type="Script" uid="uid://c8pj3o4otgusb" path="res://scriptinterface.gd" id="1_rh14k"]
+
 [node name="Interface" type="Node2D" unique_id=1665400921]
+script = ExtResource("1_rh14k")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=275200476]
 offset_right = 474.0
@@ -61,30 +64,33 @@ columns = 2
 layout_mode = 2
 text = "Masse"
 
-[node name="Label" type="Label" parent="Infos/MarginContainer/GridContainer" unique_id=1304304643]
+[node name="float" type="Label" parent="Infos/MarginContainer/GridContainer" unique_id=1304304643]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="Infos/MarginContainer/GridContainer" unique_id=391443547]
+[node name="Vitessepérihélie" type="Label" parent="Infos/MarginContainer/GridContainer" unique_id=391443547]
 layout_mode = 2
 text = "Vitesse au périhélie"
 
-[node name="Label3" type="Label" parent="Infos/MarginContainer/GridContainer" unique_id=768220725]
+[node name="float2" type="Label" parent="Infos/MarginContainer/GridContainer" unique_id=768220725]
 layout_mode = 2
 
-[node name="Label4" type="Label" parent="Infos/MarginContainer/GridContainer" unique_id=905086712]
+[node name="Excentricité" type="Label" parent="Infos/MarginContainer/GridContainer" unique_id=905086712]
 layout_mode = 2
 text = "Excentricité"
 
-[node name="Label5" type="Label" parent="Infos/MarginContainer/GridContainer" unique_id=2101472695]
+[node name="float3" type="Label" parent="Infos/MarginContainer/GridContainer" unique_id=2101472695]
 layout_mode = 2
 
-[node name="Label6" type="Label" parent="Infos/MarginContainer/GridContainer" unique_id=1953655675]
+[node name="Périoderévolution" type="Label" parent="Infos/MarginContainer/GridContainer" unique_id=1953655675]
 layout_mode = 2
 text = "Période révolution autour du Soleil"
 
-[node name="Label7" type="Label" parent="Infos/MarginContainer/GridContainer" unique_id=1591966667]
+[node name="float4" type="Label" parent="Infos/MarginContainer/GridContainer" unique_id=1591966667]
 layout_mode = 2
 
-[node name="Label8" type="Label" parent="Infos/MarginContainer/GridContainer" unique_id=640933590]
+[node name="Périoderotation" type="Label" parent="Infos/MarginContainer/GridContainer" unique_id=640933590]
 layout_mode = 2
 text = "Période rotation autour de lui-même"
+
+[node name="float5" type="Label" parent="Infos/MarginContainer/GridContainer" unique_id=1111406733]
+layout_mode = 2
