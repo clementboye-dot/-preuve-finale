@@ -12,9 +12,6 @@ class_name Astre
 @export var masse : float
 @export var position_initiale : Vector3
 @export var vitesse_initiale : Vector3
-@export var vitesse_perihelie : float
-@export var excentricite : float
-@export var plan_inclinaison : float
 
 @export_group("Paramètres RK4")
 @export var etapes_calcul_par_ecran : int
@@ -44,6 +41,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	appliquer_RK4(delta)
 	position = conv_position_reelle_a_simulee(r_i)
+	
 
 func conv_position_reelle_a_simulee(position_reelle : Vector3) -> Vector3:
 	var distance_reelle = position_reelle.length() #Norme vecteur de distance
