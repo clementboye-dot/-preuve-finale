@@ -14,9 +14,12 @@ class_name Astre
 @export var vitesse_initiale : Vector3
 
 @export_group("Informations")
-@export var nom : String 
+@export var nom : String
+@export var vitesse_peri : float
 @export var periode_revo : float
 @export var periode_rot : float
+@export var excentricité : float
+
 @export var interface : Node2D
 
 func _input_event(_camera, event, _position, _normal, _shape_idx):
