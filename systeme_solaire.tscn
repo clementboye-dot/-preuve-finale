@@ -24,14 +24,13 @@ script = ExtResource("3_tmq3n")
 [node name="Node3D2" type="Node3D" parent="." unique_id=244759195]
 
 [node name="Camera3D" type="Camera3D" parent="Node3D2" unique_id=1582182534]
-
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.709568988384582)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.709568988384586)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=440042175]
 environment = SubResource("Environment_4xowi")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=606073836]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.7591889824388467, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.7591889824388462, 0)
 omni_range = 50.100033
 omni_attenuation = 0.0
 
@@ -60,15 +59,10 @@ max_distance_reelle = 69816900000.0
 masse = 3.30104e+23
 position_initiale = Vector3(-32650110768.97, -56118103200.09, -26543426952.76)
 vitesse_initiale = Vector3(33311.547, -16770.258, -12410.149)
-
-vitesse_perihelie = 58980.0
-excentricite = 0.206
-plan_inclinaison = 0.03
 nom = "Mercure"
 periode_revo = 0.241
 periode_rot = 58.646
 etapes_calcul_par_ecran = 100
-
 
 [node name="Vénus" parent="." unique_id=31247543 node_paths=PackedStringArray("liste_planetes") instance=ExtResource("4_i4jmq")]
 liste_planetes = NodePath("../Liste Planètes")
@@ -79,11 +73,9 @@ max_distance_reelle = 108943000000.0
 masse = 4.86732e+24
 position_initiale = Vector3(12837088789.05, -98936350759.828, -45325671161.52)
 vitesse_initiale = Vector3(34535.181, 4583.191, -122.074)
-
 nom = "Vénus"
 periode_revo = 0.615
 periode_rot = 58.646
-
 etapes_calcul_par_ecran = 1000
 
 [node name="Terre" parent="." unique_id=831615703 node_paths=PackedStringArray("liste_planetes") instance=ExtResource("5_m4722")]
@@ -95,7 +87,6 @@ max_distance_reelle = 152097701000.0
 masse = 5.97219e+24
 position_initiale = Vector3(-26530896861.903, 132064446233.185, 57268711670.172)
 vitesse_initiale = Vector3(-29776.506, -4950.769, -2146.23)
-
 nom = "Terre"
 periode_revo = 1.0
 periode_rot = 0.997
@@ -111,7 +102,8 @@ masse = 6.41693e+23
 position_initiale = Vector3(50492927058.32, -188910865671.5, -87982433201.5)
 vitesse_initiale = Vector3(24459.5, 7385.96, 2728.12)
 nom = "Mars"
-
+periode_revo = 1.881
+periode_rot = 1.026
 etapes_calcul_par_ecran = 100
 
 [node name="Jupiter" parent="." unique_id=707915115 node_paths=PackedStringArray("liste_planetes") instance=ExtResource("8_m4722")]
@@ -123,6 +115,9 @@ max_distance_reelle = 816000000000.0
 masse = 1.89813e+27
 position_initiale = Vector3(-253878002218.836, 674701512947.702, 295381710768.629)
 vitesse_initiale = Vector3(-12507.074, -3455.519, -1176.64)
+nom = "Jupiter"
+periode_revo = 11.863
+periode_rot = 0.414
 etapes_calcul_par_ecran = 100
 
 [node name="Interface" parent="." unique_id=1665400921 instance=ExtResource("9_sgel3")]
@@ -136,6 +131,9 @@ max_distance_reelle = 1503500000000.0
 masse = 5.68319e+26
 position_initiale = Vector3(1421819565066.78, 57395409436.363, -37533235474.829)
 vitesse_initiale = Vector3(-789.386, 8894.364, 3707.799)
+nom = "Saturne"
+periode_revo = 29.447
+periode_rot = 0.444
 etapes_calcul_par_ecran = 50
 
 [node name="Uranus" parent="." unique_id=849429341 node_paths=PackedStringArray("liste_planetes") instance=ExtResource("10_xhxhc")]
@@ -147,6 +145,9 @@ max_distance_reelle = 3006300000000.0
 masse = 8.68103e+25
 position_initiale = Vector3(1477614361464.48, 2309002293864.32, 990379982834.645)
 vitesse_initiale = Vector3(-5920.243, 2841.073, 1328.036)
+nom = "Uranus"
+periode_revo = 84.017
+periode_rot = -0.718
 etapes_calcul_par_ecran = 50
 
 [node name="Neptune" parent="." unique_id=1669258585 node_paths=PackedStringArray("liste_planetes") instance=ExtResource("11_8oucy")]
@@ -158,6 +159,9 @@ max_distance_reelle = 4537000000000.0
 masse = 1.0241e+26
 position_initiale = Vector3(4468348197357.4, 112057017573.327, -65380145420.469)
 vitesse_initiale = Vector3(-129.201, 5059.197, 2073.973)
+nom = "Neptune"
+periode_revo = 164.791
+periode_rot = 0.671
 etapes_calcul_par_ecran = 50
 
 [node name="Pluton" parent="." unique_id=726929699 node_paths=PackedStringArray("liste_planetes") instance=ExtResource("12_efn0d")]
@@ -169,4 +173,5 @@ max_distance_reelle = 7375927931000.0
 masse = 1.3139999999999999e+22
 position_initiale = Vector3(2875996542272.52, -3928583689975.5, -2092522253441.97)
 vitesse_initiale = Vector3(4711.972, 2219.55, -727.049)
+nom = "Pluton"
 etapes_calcul_par_ecran = 50
