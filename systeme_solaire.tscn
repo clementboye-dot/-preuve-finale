@@ -25,7 +25,7 @@ script = ExtResource("3_tmq3n")
 [node name="Node3D2" type="Node3D" parent="." unique_id=244759195]
 
 [node name="Camera3D" type="Camera3D" parent="Node3D2" unique_id=1582182534]
-transform = Transform3D(1, 0, 0, 0, 0.34690520719117235, 0.9379001957690648, 0, -0.9379001957690648, 0.34690520719117235, 0, 27.15257312235267, 6.485659491578321)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 31.709568988384582)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=440042175]
 environment = SubResource("Environment_4xowi")
@@ -109,7 +109,10 @@ etapes_calcul_par_ecran = 100
 
 [node name="Interface" parent="." unique_id=1665400921 instance=ExtResource("9_sgel3")]
 
+<<<<<<< HEAD
 [node name="Interface" parent="." unique_id=1665400921 instance=ExtResource("9_sgel3")]
+=======
+>>>>>>> 116df220bc3da64b72199e3ebc2b1c95b3a78206
 [node name="Saturne" parent="." unique_id=2077513798 node_paths=PackedStringArray("liste_planetes") instance=ExtResource("9_sgel3")]
 liste_planetes = NodePath("../Liste Planètes")
 min_distance_simulee = 15.0
