@@ -10,5 +10,9 @@ albedo_color = Color(0.49019608, 0.9098039, 0.9098039, 1)
 [node name="Uranus" unique_id=587096134 instance=ExtResource("1_8q3j1")]
 
 [node name="MeshInstance3D" parent="RigidBody3D" parent_id_path=PackedInt32Array(297619227) index="0" unique_id=1160622455]
+transform = Transform3D(1.22, 0, 0, 0, 1.22, 0, 0, 0, 1.22, 0, 0, 0)
 mesh = SubResource("SphereMesh_e8pt5")
 surface_material_override/0 = SubResource("StandardMaterial3D_1dyna")
+
+[node name="CollisionShape3D" parent="RigidBody3D" parent_id_path=PackedInt32Array(297619227) index="1" unique_id=1265038967]
+transform = Transform3D(1.22, 0, 0, 0, 1.22, 0, 0, 0, 1.22, 0, 0, 0)
