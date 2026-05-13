@@ -1,6 +1,6 @@
 extends Node3D
-class_name Astre
-@export var liste_planetes : ListeAstre
+class_name Astres
+@export var liste_planetes : ListeAstres
 @export_group("Paramètre de conversion simulation")
 @export var min_distance_simulee : float
 @export var max_distance_simulee : float
@@ -21,8 +21,7 @@ var G : float = 6.673e-11
 
 
 var echelle_temps : float = 31557600.0
-#1s = 1 mois : 2629800.0
-#1s = 1 an : 31557600.0
+
 
 var v_i : Vector3
 var r_i : Vector3
