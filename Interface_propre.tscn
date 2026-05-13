@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c4sa5wyt2ccju" path="res://script_interface.gd" id="1_q3wdx"]
 
-[node name="Control" type="Control" unique_id=95161984 node_paths=PackedStringArray("slider", "label_temps")]
+[node name="Interface temps" type="Control" unique_id=95161984 node_paths=PackedStringArray("slider", "label_temps")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,7 +39,8 @@ layout_mode = 2
 [node name="Label" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=2036002469]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "Mercure"
+text = "Échelle de temps"
+horizontal_alignment = 3
 
 [node name="Temps" type="PanelContainer" parent="VBoxContainer" unique_id=1513792410]
 layout_mode = 2
@@ -52,7 +53,9 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer/Temps/MarginContainer" unique_id=2134388932]
+layout_direction = 1
 layout_mode = 2
+offset_transform_enabled = true
 columns = 2
 
 [node name="Temps" type="Label" parent="VBoxContainer/Temps/MarginContainer/GridContainer" unique_id=717582522]
@@ -70,54 +73,4 @@ layout_mode = 2
 text = "1 seconde ="
 
 [node name="Valeur de temps" type="Label" parent="VBoxContainer/Temps/MarginContainer/GridContainer" unique_id=945153706]
-layout_mode = 2
-
-[node name="Infos" type="PanelContainer" parent="VBoxContainer" unique_id=521227374]
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Infos" unique_id=1586103702]
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/Infos/MarginContainer" unique_id=2133985412]
-layout_mode = 2
-theme_override_constants/h_separation = 4
-columns = 2
-
-[node name="Masse" type="Label" parent="VBoxContainer/Infos/MarginContainer/GridContainer" unique_id=1203638944]
-layout_mode = 2
-text = "Masse"
-
-[node name="Label" type="Label" parent="VBoxContainer/Infos/MarginContainer/GridContainer" unique_id=884687647]
-layout_mode = 2
-
-[node name="Label2" type="Label" parent="VBoxContainer/Infos/MarginContainer/GridContainer" unique_id=1204220952]
-layout_mode = 2
-text = "Vitesse au périhélie"
-
-[node name="Label3" type="Label" parent="VBoxContainer/Infos/MarginContainer/GridContainer" unique_id=1660333789]
-layout_mode = 2
-
-[node name="Label4" type="Label" parent="VBoxContainer/Infos/MarginContainer/GridContainer" unique_id=1845396672]
-layout_mode = 2
-text = "Excentricité"
-
-[node name="Label5" type="Label" parent="VBoxContainer/Infos/MarginContainer/GridContainer" unique_id=639728203]
-layout_mode = 2
-
-[node name="Label6" type="Label" parent="VBoxContainer/Infos/MarginContainer/GridContainer" unique_id=72767142]
-layout_mode = 2
-text = "Période révolution autour du Soleil"
-
-[node name="Label7" type="Label" parent="VBoxContainer/Infos/MarginContainer/GridContainer" unique_id=2035733419]
-layout_mode = 2
-
-[node name="Label8" type="Label" parent="VBoxContainer/Infos/MarginContainer/GridContainer" unique_id=1692047224]
-layout_mode = 2
-text = "Période rotation autour de lui-même"
-
-[node name="Label9" type="Label" parent="VBoxContainer/Infos/MarginContainer/GridContainer" unique_id=1119608719]
 layout_mode = 2

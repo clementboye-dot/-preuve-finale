@@ -22,17 +22,16 @@ func _ready() -> void:
 
 # Connecte le signal
 	slider.value_changed.connect(_on_slider_value_changed)
-	
+	_mettre_a_jour_label(slider.value)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+
 func _on_slider_value_changed(valeur : float) -> void:
 	# Interpolation logarithmique pour avoir une progression naturelle
 	var echelle = ECHELLE_MIN * pow(ECHELLE_MAX / ECHELLE_MIN, valeur)
 	for planete in astres.planetes:
 		planete.echelle_temps = echelle
 	_mettre_a_jour_label(valeur)
+
 func _mettre_a_jour_label(valeur : float) -> void:
 	var echelle = ECHELLE_MIN * pow(ECHELLE_MAX / ECHELLE_MIN, valeur)
 # Affiche en mois ou en ans selon la valeur

@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://d2mopymc3nsdy"]
+
+[ext_resource type="Script" uid="uid://dmar2ee14hn21" path="res://infos_planetes.gd" id="1_bgpgb"]
+
+[node name="Affichage infos planètes" type="Control" unique_id=1759720554]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_bgpgb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=651063556]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Nom planète" type="PanelContainer" parent="VBoxContainer" unique_id=1001187157]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Nom planète" unique_id=1962568056]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Nom planète/MarginContainer" unique_id=41699598]
+layout_mode = 2
+
+[node name="Nom planète" type="Label" parent="VBoxContainer/Nom planète/MarginContainer/HBoxContainer" unique_id=399914324]
+layout_mode = 2
+
+[node name="Infos planète" type="PanelContainer" parent="VBoxContainer" unique_id=1962249929]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Infos planète" unique_id=256551239]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/Infos planète/MarginContainer" unique_id=386992513]
+layout_mode = 2
+theme_override_constants/h_separation = 4
+columns = 2
+
+[node name="Masse" type="Label" parent="VBoxContainer/Infos planète/MarginContainer/GridContainer" unique_id=575551460]
+layout_mode = 2
+text = "Masse"
+
+[node name="Valeur masse" type="Label" parent="VBoxContainer/Infos planète/MarginContainer/GridContainer" unique_id=1568219599]
+layout_mode = 2
+
+[node name="Vitesse" type="Label" parent="VBoxContainer/Infos planète/MarginContainer/GridContainer" unique_id=1187371495]
+layout_mode = 2
+text = "Vitesse au périhélie"
+
+[node name="Valeur vitesse" type="Label" parent="VBoxContainer/Infos planète/MarginContainer/GridContainer" unique_id=1005686473]
+layout_mode = 2
+
+[node name="Excentricité" type="Label" parent="VBoxContainer/Infos planète/MarginContainer/GridContainer" unique_id=64948922]
+layout_mode = 2
+text = "Excentricité"
+
+[node name="Valeur excentricité" type="Label" parent="VBoxContainer/Infos planète/MarginContainer/GridContainer" unique_id=605855121]
+layout_mode = 2
+
+[node name="Révolution" type="Label" parent="VBoxContainer/Infos planète/MarginContainer/GridContainer" unique_id=265395162]
+layout_mode = 2
+text = "Période révolution (autour du Soleil)"
+
+[node name="Valeur révolution" type="Label" parent="VBoxContainer/Infos planète/MarginContainer/GridContainer" unique_id=2025521542]
+layout_mode = 2
+
+[node name="Rotation" type="Label" parent="VBoxContainer/Infos planète/MarginContainer/GridContainer" unique_id=1251065670]
+layout_mode = 2
+text = "Période rotation (sur elle-même)"
+
+[node name="Valeur rotation" type="Label" parent="VBoxContainer/Infos planète/MarginContainer/GridContainer" unique_id=528824158]
+layout_mode = 2

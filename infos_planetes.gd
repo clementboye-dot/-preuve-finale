@@ -1,4 +1,4 @@
-extends RigidBody3D
+extends Control
 
 @export var nom : String = "Terre"
 @export var masse : float = 330.104e21
