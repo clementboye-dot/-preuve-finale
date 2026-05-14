@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cn1gt0yg8am34" path="res://soleil.tscn" id="1_kn8mq"]
 [ext_resource type="PackedScene" uid="uid://6kubr73fv4wv" path="res://mars.tscn" id="2_tmq3n"]
-[ext_resource type="Script" uid="uid://c1y7wmdi8wv6o" path="res://node_3d.gd" id="3_tmq3n"]
+[ext_resource type="Script" uid="uid://c1y7wmdi8wv6o" path="res://mouvement_camera.gd" id="3_tmq3n"]
 [ext_resource type="PackedScene" uid="uid://dvagahhyrjo0e" path="res://mercure.tscn" id="4_f33st"]
 [ext_resource type="PackedScene" uid="uid://g0clevt4ibgv" path="res://venus.tscn" id="4_i4jmq"]
 [ext_resource type="Script" uid="uid://bk21qam6k4nu" path="res://liste_astre.gd" id="4_tx178"]
@@ -20,13 +20,12 @@ background_mode = 1
 
 [node name="Node3D" type="Node3D" unique_id=281415560]
 
-[node name="Node3D" type="Node3D" parent="." unique_id=147103916]
+[node name="Node3D" type="Node3D" parent="." unique_id=1322478875]
 script = ExtResource("3_tmq3n")
 
-[node name="Node3D2" type="Node3D" parent="." unique_id=244759195]
-
-[node name="Camera3D" type="Camera3D" parent="Node3D2" unique_id=1582182534]
+[node name="Camera3D" type="Camera3D" parent="Node3D" unique_id=1582182534]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)
+current = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=440042175]
 environment = SubResource("Environment_4xowi")
@@ -74,13 +73,14 @@ min_distance_simulee = 4.0
 max_distance_simulee = 5.0
 min_distance_reelle = 107476000000.0
 max_distance_reelle = 108943000000.0
-masse = 4.86732e+24
+masse = 4.868e+24
 position_initiale = Vector3(12837088789.05, -98936350759.828, -45325671161.52)
 vitesse_initiale = Vector3(34535.181, 4583.191, -122.074)
 vitesse_perihelie = 35260.0
 excentricite = 0.007
 periode_revolution = 0.615
 periode_rotation = 243.018
+
 etapes_calcul_par_ecran = 100
 
 [node name="Terre" parent="." unique_id=831615703 node_paths=PackedStringArray("liste_planetes") instance=ExtResource("5_m4722")]

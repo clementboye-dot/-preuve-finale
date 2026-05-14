@@ -105,7 +105,7 @@ func appliquer_RK4(temps_dernier_ecran : float) -> void:
 func _on_clic(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			emit_signal("astre_clique", self)
-			print("Clic sur" + name)
+
 
 
 func mettre_en_pause(etat_pause: bool) -> void:
