@@ -49,6 +49,7 @@ max_distance_reelle = 250000000000.0
 masse = 1.9884e+30
 position_initiale = Vector3(-458758476.771, -767257450.321, -311187240.324)
 vitesse_initiale = Vector3(12.425, 0.376, -0.093)
+periode_rotation = 25.38
 etapes_calcul_par_ecran = 100
 
 [node name="Mercure" parent="." unique_id=1557733872 node_paths=PackedStringArray("liste_planetes") instance=ExtResource("4_f33st")]
@@ -60,6 +61,10 @@ max_distance_reelle = 69816900000.0
 masse = 3.30104e+23
 position_initiale = Vector3(-32650110768.97, -56118103200.09, -26543426952.76)
 vitesse_initiale = Vector3(33311.547, -16770.258, -12410.149)
+vitesse_perihelie = 58980.0
+excentricite = 0.206
+periode_revolution = 0.241
+periode_rotation = 58.646
 etapes_calcul_par_ecran = 100
 
 [node name="Vénus" parent="." unique_id=31247543 node_paths=PackedStringArray("liste_planetes") instance=ExtResource("4_i4jmq")]
@@ -72,9 +77,10 @@ masse = 4.868e+24
 position_initiale = Vector3(12837088789.05, -98936350759.828, -45325671161.52)
 vitesse_initiale = Vector3(34535.181, 4583.191, -122.074)
 vitesse_perihelie = 35260.0
-excentricite = 0.006
-periode_revolution = 224.667
-periode_rotation = 243.023
+excentricite = 0.007
+periode_revolution = 0.615
+periode_rotation = 243.018
+
 etapes_calcul_par_ecran = 100
 
 [node name="Terre" parent="." unique_id=831615703 node_paths=PackedStringArray("liste_planetes") instance=ExtResource("5_m4722")]
@@ -86,6 +92,10 @@ max_distance_reelle = 152097701000.0
 masse = 5.97219e+24
 position_initiale = Vector3(-26530896861.903, 132064446233.185, 57268711670.172)
 vitesse_initiale = Vector3(-29776.506, -4950.769, -2146.23)
+vitesse_perihelie = 30290.0
+excentricite = 0.017
+periode_revolution = 1.0
+periode_rotation = 0.997
 etapes_calcul_par_ecran = 100
 
 [node name="Mars" parent="." unique_id=1646166341 node_paths=PackedStringArray("liste_planetes") instance=ExtResource("2_tmq3n")]
@@ -97,6 +107,10 @@ max_distance_reelle = 249230000000.0
 masse = 6.41693e+23
 position_initiale = Vector3(50492927058.32, -188910865671.5, -87982433201.5)
 vitesse_initiale = Vector3(24459.5, 7385.96, 2728.12)
+vitesse_perihelie = 26500.0
+excentricite = 0.093
+periode_revolution = 1.881
+periode_rotation = 1.026
 etapes_calcul_par_ecran = 100
 
 [node name="Jupiter" parent="." unique_id=707915115 node_paths=PackedStringArray("liste_planetes") instance=ExtResource("8_m4722")]
@@ -108,6 +122,10 @@ max_distance_reelle = 816000000000.0
 masse = 1.89813e+27
 position_initiale = Vector3(-253878002218.836, 674701512947.702, 295381710768.629)
 vitesse_initiale = Vector3(-12507.074, -3455.519, -1176.64)
+vitesse_perihelie = 13720.0
+excentricite = 0.048
+periode_revolution = 11.863
+periode_rotation = 0.414
 etapes_calcul_par_ecran = 100
 
 [node name="Saturne" parent="." unique_id=2077513798 node_paths=PackedStringArray("liste_planetes") instance=ExtResource("9_sgel3")]
@@ -119,6 +137,10 @@ max_distance_reelle = 1503500000000.0
 masse = 5.68319e+26
 position_initiale = Vector3(1421819565066.78, 57395409436.363, -37533235474.829)
 vitesse_initiale = Vector3(-789.386, 8894.364, 3707.799)
+vitesse_perihelie = 10180.0
+excentricite = 0.054
+periode_revolution = 29.447
+periode_rotation = 0.444
 etapes_calcul_par_ecran = 100
 
 [node name="Uranus" parent="." unique_id=849429341 node_paths=PackedStringArray("liste_planetes") instance=ExtResource("10_xhxhc")]
@@ -130,6 +152,10 @@ max_distance_reelle = 3006300000000.0
 masse = 8.68103e+25
 position_initiale = Vector3(1477614361464.48, 2309002293864.32, 990379982834.645)
 vitesse_initiale = Vector3(-5920.243, 2841.073, 1328.036)
+vitesse_perihelie = 7110.0
+excentricite = 0.047
+periode_revolution = 84.017
+periode_rotation = 0.718
 etapes_calcul_par_ecran = 100
 
 [node name="Neptune" parent="." unique_id=1669258585 node_paths=PackedStringArray("liste_planetes") instance=ExtResource("11_8oucy")]
@@ -141,6 +167,10 @@ max_distance_reelle = 4537000000000.0
 masse = 1.0241e+26
 position_initiale = Vector3(4468348197357.4, 112057017573.327, -65380145420.469)
 vitesse_initiale = Vector3(-129.201, 5059.197, 2073.973)
+vitesse_perihelie = 5500.0
+excentricite = 0.009
+periode_revolution = 164.791
+periode_rotation = 0.671
 etapes_calcul_par_ecran = 100
 
 [node name="Pluton" parent="." unique_id=726929699 node_paths=PackedStringArray("liste_planetes") instance=ExtResource("12_efn0d")]
@@ -152,6 +182,10 @@ max_distance_reelle = 7375927931000.0
 masse = 1.3139999999999999e+22
 position_initiale = Vector3(2875996542272.52, -3928583689975.5, -2092522253441.97)
 vitesse_initiale = Vector3(4711.972, 2219.55, -727.049)
+vitesse_perihelie = 6100.0
+excentricite = 0.245
+periode_revolution = 248.0
+periode_rotation = 6.3870000000000005
 etapes_calcul_par_ecran = 100
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1363232063]
