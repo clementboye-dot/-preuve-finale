@@ -12,6 +12,10 @@ class_name Astres
 @export var masse : float
 @export var position_initiale : Vector3
 @export var vitesse_initiale : Vector3
+@export var vitesse_perihelie : float
+@export var excentricite : float
+@export var periode_revolution : float
+@export var periode_rotation : float
 
 @export_group("Paramètres RK4")
 @export var etapes_calcul_par_ecran : int
@@ -26,6 +30,10 @@ var echelle_temps : float = 2629800.0
 var v_i : Vector3
 var r_i : Vector3
 
+signal astre_clique(astre)
+
+var pause : bool
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 #---POSITION INITIALE---#
@@ -36,8 +44,18 @@ func _ready() -> void:
 #---VITESSE INITIALE---#
 	v_i = vitesse_initiale
 	
+	#Appelle la fonciton _on_clic lorsqu'un clic sur le RigidBody est détecté
+	if not $RigidBody3D.input_event.is_connected(_on_clic):
+		$RigidBody3D.input_event.connect(_on_clic)
+	
+	pause = false
+
+	add_to_group("corps_celestes")
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if pause == true:
+		return
 	appliquer_RK4(delta)
 	position = conv_position_reelle_a_simulee(r_i)
 	
@@ -86,4 +104,13 @@ func appliquer_RK4(temps_dernier_ecran : float) -> void:
 
 func _on_clic(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			print("Clic sur " + name)
+			emit_signal("astre_clique", self)
+			print("Clic sur" + name)
+
+
+func mettre_en_pause(etat_pause: bool) -> void:
+	"""Change l'état de pause de l'astre
+	
+	Parametre :
+	etat_pause -- l'état de pause à adopter par l'astre"""
+	pause = etat_pause

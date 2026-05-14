@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bh68mdunjuel8" path="res://neptune.tscn" id="11_8oucy"]
 [ext_resource type="PackedScene" uid="uid://c8irkubqged1n" path="res://pluton.tscn" id="12_efn0d"]
 [ext_resource type="PackedScene" uid="uid://8damkjsmvgrt" path="res://Interface_propre.tscn" id="13_d84vu"]
+[ext_resource type="PackedScene" uid="uid://d2mopymc3nsdy" path="res://Interface_info_planètes.tscn" id="14_1324n"]
 
 [sub_resource type="Environment" id="Environment_4xowi"]
 background_mode = 1
@@ -153,4 +154,7 @@ etapes_calcul_par_ecran = 100
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1363232063]
 
 [node name="Interface temps" parent="CanvasLayer" unique_id=95161984 node_paths=PackedStringArray("astres") instance=ExtResource("13_d84vu")]
+astres = NodePath("../../Liste Planètes")
+
+[node name="Affichage infos planètes" parent="CanvasLayer" unique_id=1759720554 node_paths=PackedStringArray("astres") instance=ExtResource("14_1324n")]
 astres = NodePath("../../Liste Planètes")

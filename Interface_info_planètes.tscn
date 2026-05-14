@@ -2,15 +2,23 @@
 
 [ext_resource type="Script" uid="uid://dmar2ee14hn21" path="res://infos_planetes.gd" id="1_bgpgb"]
 
-[node name="Affichage infos planètes" type="Control" unique_id=1759720554]
+[node name="Affichage infos planètes" type="Control" unique_id=1759720554 node_paths=PackedStringArray("label_nom", "label_masse", "label_vitesse_perihelie", "label_excentricite", "label_periode_revolution", "label_periode_rotation")]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_top = 0.725
+anchor_right = 0.268
+anchor_bottom = 0.725
+offset_right = 0.26400000000001
+offset_bottom = 0.1519999999999868
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_bgpgb")
+label_nom = NodePath("VBoxContainer/Nom planète/MarginContainer/HBoxContainer/Nom planète")
+label_masse = NodePath("VBoxContainer/Infos planète/MarginContainer/GridContainer/Valeur masse")
+label_vitesse_perihelie = NodePath("VBoxContainer/Infos planète/MarginContainer/GridContainer/Valeur vitesse")
+label_excentricite = NodePath("VBoxContainer/Infos planète/MarginContainer/GridContainer/Valeur excentricité")
+label_periode_revolution = NodePath("VBoxContainer/Infos planète/MarginContainer/GridContainer/Valeur révolution")
+label_periode_rotation = NodePath("VBoxContainer/Infos planète/MarginContainer/GridContainer/Valeur rotation")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=651063556]
 layout_mode = 0
