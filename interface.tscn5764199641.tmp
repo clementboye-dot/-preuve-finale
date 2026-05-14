@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://o0bhvoir5xx2"]
+
+[ext_resource type="Script" uid="uid://c4sa5wyt2ccju" path="res://script_interface.gd" id="1_rh14k"]
+
+[node name="Interface" type="Control" unique_id=1536498489 node_paths=PackedStringArray("slider", "label_temps")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_rh14k")
+slider = NodePath("VBoxContainer/Temps/MarginContainer/GridContainer/HSlider")
+label_temps = NodePath("VBoxContainer/Temps/MarginContainer/GridContainer/Valeur de temps")
+metadata/_custom_type_script = "uid://c4sa5wyt2ccju"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=275200476]
+layout_mode = 0
+offset_right = 474.0
+offset_bottom = 31.0
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=1473800551]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer" unique_id=1565662476]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer" unique_id=220282999]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=1997990736]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Mercure"
+
+[node name="Temps" type="PanelContainer" parent="VBoxContainer" unique_id=815681695]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Temps" unique_id=390944324]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/Temps/MarginContainer" unique_id=1746439782]
+layout_mode = 2
+columns = 2
+
+[node name="Temps" type="Label" parent="VBoxContainer/Temps/MarginContainer/GridContainer" unique_id=50122805]
+layout_mode = 2
+text = "Temps"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/Temps/MarginContainer/GridContainer" unique_id=839367547]
+propagate_maximum_size = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Échelle de temps" type="Label" parent="VBoxContainer/Temps/MarginContainer/GridContainer" unique_id=1494253819]
+layout_mode = 2
+text = "1 seconde ="
+
+[node name="Valeur de temps" type="Label" parent="VBoxContainer/Temps/MarginContainer/GridContainer" unique_id=264671461]
+layout_mode = 2
+
+[node name="Infos" type="PanelContainer" parent="VBoxContainer" unique_id=652216278]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Infos" unique_id=1722594046]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/Infos/MarginContainer" unique_id=747859319]
+layout_mode = 2
+theme_override_constants/h_separation = 4
+columns = 2
+
+[node name="Masse" type="Label" parent="VBoxContainer/Infos/MarginContainer/GridContainer" unique_id=505289799]
+layout_mode = 2
+text = "Masse"
+
+[node name="Label" type="Label" parent="VBoxContainer/Infos/MarginContainer/GridContainer" unique_id=1304304643]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/Infos/MarginContainer/GridContainer" unique_id=391443547]
+layout_mode = 2
+text = "Vitesse au périhélie"
+
+[node name="Label3" type="Label" parent="VBoxContainer/Infos/MarginContainer/GridContainer" unique_id=768220725]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer/Infos/MarginContainer/GridContainer" unique_id=905086712]
+layout_mode = 2
+text = "Excentricité"
+
+[node name="Label5" type="Label" parent="VBoxContainer/Infos/MarginContainer/GridContainer" unique_id=2101472695]
+layout_mode = 2
+
+[node name="Label6" type="Label" parent="VBoxContainer/Infos/MarginContainer/GridContainer" unique_id=1953655675]
+layout_mode = 2
+text = "Période révolution autour du Soleil"
+
+[node name="Label7" type="Label" parent="VBoxContainer/Infos/MarginContainer/GridContainer" unique_id=1591966667]
+layout_mode = 2
+
+[node name="Label8" type="Label" parent="VBoxContainer/Infos/MarginContainer/GridContainer" unique_id=640933590]
+layout_mode = 2
+text = "Période rotation autour de lui-même"

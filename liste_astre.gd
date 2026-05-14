@@ -1,3 +1,3 @@
 extends Node3D
-class_name ListeAstre 
-@export var planetes : Array[Astre]
+class_name ListeAstres 
+@export var planetes : Array[Astres]

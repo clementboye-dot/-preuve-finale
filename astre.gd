@@ -1,6 +1,6 @@
 extends Node3D
-class_name Astre
-@export var liste_planetes : ListeAstre
+class_name Astres
+@export var liste_planetes : ListeAstres
 @export_group("Paramètre de conversion simulation")
 @export var min_distance_simulee : float
 @export var max_distance_simulee : float
@@ -20,9 +20,8 @@ class_name Astre
 var G : float = 6.673e-11
 
 
-var echelle_temps : float = 31557600.0
-#1s = 1 mois : 2629800.0
-#1s = 1 an : 31557600.0
+var echelle_temps : float = 2629800.0
+
 
 var v_i : Vector3
 var r_i : Vector3
@@ -83,3 +82,8 @@ func appliquer_RK4(temps_dernier_ecran : float) -> void:
 		# Mise à jour position et vitesse
 		r_i = r_i + (h / 6.0) * (k1_r + 2*k2_r + 2*k3_r + k4_r)
 		v_i = v_i + (h / 6.0) * (k1_v + 2*k2_v + 2*k3_v + k4_v)
+
+
+func _on_clic(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			print("Clic sur " + name)
