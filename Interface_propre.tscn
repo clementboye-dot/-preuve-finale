@@ -3,20 +3,21 @@
 [ext_resource type="Script" uid="uid://c4sa5wyt2ccju" path="res://script_interface.gd" id="1_q3wdx"]
 [ext_resource type="Script" uid="uid://bcu6oo2i67yd5" path="res://bouton_pause.gd" id="2_swwm7"]
 
-[node name="Interface temps" type="Control" unique_id=95161984 node_paths=PackedStringArray("slider", "label_temps")]
+[node name="Interface temps" type="Control" unique_id=95161984 node_paths=PackedStringArray("slider", "label_temps", "label_date")]
 layout_mode = 3
 anchor_top = 0.002
-anchor_right = 0.23900000000000002
+anchor_right = 0.239
 anchor_bottom = 0.196
 offset_left = 1.0
 offset_top = -0.29600000000000004
 offset_right = -0.3280000000000314
-offset_bottom = -0.008000000000009777
+offset_bottom = -0.00800000000000977
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q3wdx")
 slider = NodePath("VBoxContainer/Temps/MarginContainer/GridContainer/HSlider")
 label_temps = NodePath("VBoxContainer/Temps/MarginContainer/GridContainer/Valeur de temps")
+label_date = NodePath("VBoxContainer/Temps/MarginContainer/GridContainer/Valeur date")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1155824669]
 layout_mode = 0
@@ -84,4 +85,11 @@ layout_mode = 2
 text = "1 seconde ="
 
 [node name="Valeur de temps" type="Label" parent="VBoxContainer/Temps/MarginContainer/GridContainer" unique_id=945153706]
+layout_mode = 2
+
+[node name="Date" type="Label" parent="VBoxContainer/Temps/MarginContainer/GridContainer" unique_id=1432006897]
+layout_mode = 2
+text = "Date"
+
+[node name="Valeur date" type="Label" parent="VBoxContainer/Temps/MarginContainer/GridContainer" unique_id=208603901]
 layout_mode = 2
