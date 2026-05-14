@@ -109,10 +109,6 @@ etapes_calcul_par_ecran = 100
 
 [node name="Interface" parent="." unique_id=1665400921 instance=ExtResource("9_sgel3")]
 
-<<<<<<< HEAD
-[node name="Interface" parent="." unique_id=1665400921 instance=ExtResource("9_sgel3")]
-=======
->>>>>>> 116df220bc3da64b72199e3ebc2b1c95b3a78206
 [node name="Saturne" parent="." unique_id=2077513798 node_paths=PackedStringArray("liste_planetes") instance=ExtResource("9_sgel3")]
 liste_planetes = NodePath("../Liste Planètes")
 min_distance_simulee = 15.0
