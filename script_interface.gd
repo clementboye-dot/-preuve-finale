@@ -41,3 +41,11 @@ func _mettre_a_jour_label(valeur : float) -> void:
 	else:
 		var ans = echelle / 31557600.0
 		label_temps.text = "%.1f ans / seconde" % ans
+
+func changer_etat_pause(etat_pause : bool) -> void:
+	"""Change l'état de pause à chacun des astres
+	
+	Paramètre :
+	etat_pause -- est-ce que la simulation est en pause ou non """
+	for planete in astres.planetes:
+		planete.mettre_en_pause(etat_pause)
