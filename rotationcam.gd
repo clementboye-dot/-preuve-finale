@@ -4,13 +4,17 @@ extends Node3D
 @export var pitch_min: float = -89.0
 @export var pitch_max: float = 89.0
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	"""Fais incliner la caméra vers le haut et vers le bas.
+
+    Paramètres :
+    delta -- Temps écoulé depuis la dernière image (frame). 
+
+    Retour :
+    Aucun retour.
+    """
 	if Input.is_action_pressed("incliner_haut_caméra"):
 		rotate_x(vitesse_rotation * delta)
 	if Input.is_action_pressed("incliner_bas_caméra"):
