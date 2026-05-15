@@ -25,7 +25,7 @@ func _ready() -> void:
 	slider.min_value = 0.0
 	slider.max_value = 1.0
 	slider.step = 0.01
-	slider.value = 0.0  # Commence à 1s = 1 mois
+	slider.value = 0.0
 
 # Connecte le signal
 	slider.value_changed.connect(_on_slider_value_changed)
@@ -35,6 +35,9 @@ var pause = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+# Arrête le temps de simulation lorsqu'en Pause, 
+# sinon calcule le temps passé pour afficher la date depuis le 1 Janvier 2026, 
+# soit les positions initiales des planètes
 	if pause == false:
 		temps_ecoule += delta * echelle_actuelle
 		_mettre_a_jour_date()
@@ -42,7 +45,11 @@ func _process(delta: float) -> void:
 	
 	
 func _on_slider_value_changed(valeur : float) -> void:
-	# Interpolation logarithmique pour avoir une progression naturelle
+	""" Effectue une interpolation logarithmique pour les valeurs
+	de l'échelle de temps du slider
+	Paramètre:
+		valeur -- valeur du slider, comprise en 0.0 et 1.0, envoyée lorsqu'elle est modifiée
+	"""
 	var echelle = ECHELLE_MIN * pow(ECHELLE_MAX / ECHELLE_MIN, valeur)
 	echelle_actuelle = echelle
 	for planete in astres.planetes:
@@ -50,8 +57,13 @@ func _on_slider_value_changed(valeur : float) -> void:
 	_mettre_a_jour_label(valeur)
 
 func _mettre_a_jour_label(valeur : float) -> void:
+	"""Affiche la valeur du temps simulé en équivalent du temps réel
+	
+	Paramètre:
+		valeur -- valeur du slider, comprise en 0.0 et 1.0, envoyée lorsqu'elle est modifiée
+	 """
 	var echelle = ECHELLE_MIN * pow(ECHELLE_MAX / ECHELLE_MIN, valeur)
-# Affiche en mois ou en ans selon la valeur
+# Affiche l'échelle de temps en mois ou en ans selon la valeur
 	if echelle < 31557600.0:
 		var mois = echelle / 2629800.0
 		label_temps.text = "%.1f mois" % mois
@@ -60,6 +72,8 @@ func _mettre_a_jour_label(valeur : float) -> void:
 		label_temps.text = "%.1f ans" % ans
 
 func _mettre_a_jour_date() -> void:
+	"""Affiche dans l'interface la date simulée à partir du temps de simulation écoulé
+	"""
 	var jours_ecoules = int(temps_ecoule / 86400.0)
 	var date = Time.get_datetime_dict_from_unix_time(
 		Time.get_unix_time_from_datetime_dict(date_initialisation) + int(temps_ecoule)

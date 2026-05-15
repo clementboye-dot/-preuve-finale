@@ -2,7 +2,7 @@ extends Control
 class_name InterfaceInfos
 
 # --- Valeurs pour les labels de l'interface --- #
-@export var astres : Node
+@export_group("Labels")
 @export var label_nom : Label
 @export var label_masse : Label
 @export var label_vitesse_perihelie : Label
@@ -15,15 +15,28 @@ class_name InterfaceInfos
 func _ready() -> void:
 # Cache l'interface des infos de planète au début
 	visible = false
+# Parcourt les Nodes ajoutés au groupe "corps_celestes" et execute la fonction
+# _on_astre_clique lorsque que la planète est cliquée
 	for planete in get_tree().get_nodes_in_group("corps_celestes"):
 		planete.astre_clique.connect(_on_astre_clique)
 
 func _input(event: InputEvent) -> void:
+	"""Cache l'interface des infos des 
+	planètes lorsque le clic est ailleurs que sur une planète
+	
+	Paramètre : 
+		event -- evenement à détecter
+	"""
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		# Cache l'interface — elle se réaffichera si un astre est cliqué
 		visible = false
 
 func _on_astre_clique(astre : Astres) -> void:
+	"""Appele et envoie aux labels de l'interface les infos de l'astre cliqué
+	et rend visible l'interface pour les afficher
+	
+	Paramètre:
+		astre -- recoit le signal émis dans astre.gd lorsqu'une planète est cliquée
+		"""
 	visible = true
 	label_nom.text = astre.name
 	label_masse.text = format_scientifique(astre.masse) + " kg"
@@ -37,7 +50,7 @@ func _on_astre_clique(astre : Astres) -> void:
 func format_scientifique(valeur : float) -> String:
 	"""Converti en format scientifique les nombres décimaux avec 3 décimales
 	
-	Parametre:
+	Paramètre:
 	valeur -- la valeur à afficher de façon scientifique
 	
 	Retour:

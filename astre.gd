@@ -43,7 +43,10 @@ func _ready() -> void:
 	v_i = vitesse_initiale
 	
 #Appelle la fonciton _on_clic lorsqu'un clic sur le RigidBody est détecté
-	$RigidBody3D.input_event.connect(_on_clic)
+#Solution proposée par Claude (IA) car un message d'erreur apparait sporadiquement 
+#lors d'un clic sur des astres
+	if not $RigidBody3D.input_event.is_connected(_on_clic):
+		$RigidBody3D.input_event.connect(_on_clic)
 
 #Fait débuter la simulation pas sur Pause
 	pause = false

@@ -192,5 +192,4 @@ etapes_calcul_par_ecran = 100
 [node name="Interface temps" parent="CanvasLayer" unique_id=95161984 node_paths=PackedStringArray("astres") instance=ExtResource("13_d84vu")]
 astres = NodePath("../../Liste Planètes")
 
-[node name="Affichage infos planètes" parent="CanvasLayer" unique_id=1759720554 node_paths=PackedStringArray("astres") instance=ExtResource("14_1324n")]
-astres = NodePath("../../Liste Planètes")
+[node name="Affichage infos planètes" parent="CanvasLayer" unique_id=1759720554 instance=ExtResource("14_1324n")]
