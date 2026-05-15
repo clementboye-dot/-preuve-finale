@@ -1,6 +1,7 @@
 extends Control
 class_name InterfaceInfos
 
+# --- Valeurs pour les labels de l'interface --- #
 @export var astres : Node
 @export var label_nom : Label
 @export var label_masse : Label
@@ -11,14 +12,16 @@ class_name InterfaceInfos
 
 
 # Called when the node enters the scene tree for the first time.
-#func _ready() -> void:
-	#for planete in astres.planetes:
-		#planete.planete_clique.connect(_on_astre_clique)
 func _ready() -> void:
+# Cache l'interface des infos de planète au début
 	visible = false
 	for planete in get_tree().get_nodes_in_group("corps_celestes"):
 		planete.astre_clique.connect(_on_astre_clique)
 
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		# Cache l'interface — elle se réaffichera si un astre est cliqué
+		visible = false
 
 func _on_astre_clique(astre : Astres) -> void:
 	visible = true
