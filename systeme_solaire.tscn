@@ -80,7 +80,6 @@ vitesse_perihelie = 35260.0
 excentricite = 0.007
 periode_revolution = 0.615
 periode_rotation = 243.018
-
 etapes_calcul_par_ecran = 100
 
 [node name="Terre" parent="." unique_id=831615703 node_paths=PackedStringArray("liste_planetes") instance=ExtResource("5_m4722")]
